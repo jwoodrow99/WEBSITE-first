@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+    --body-header_width: 50px;
+    --body-footer_width: 50px;
+}
+
+body, body > *{
+    padding: 0px;
+    margin: 0px;
+
+    font-family: 'Noto Sans', sans-serif;
+}
+
+body {
+    display: grid;
+    grid-template-rows: var(--body-header_width) auto var(--body-footer_width);
+    grid-template-columns: auto;
+    grid-template-areas: 
+        'body-header'
+        'body-main'
+        'body-footer'
+    ;
+}
+
+body > header {
+    grid-area: body-header;
+}
+
+body > header > nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    height: 100%;
+}
+
+nav > div{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+
+nav > div.nav-left{
+    justify-content: flex-start;
+}
+
+nav > div.nav-right{
+    justify-content: flex-end;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+    padding: 0px 5px;
+    width: 15%;
+    min-width: fit-content;
+}
+
+body > main {
+    grid-area: body-main;
+    min-height: calc(100vh - (var(--body-header_width) + var(--body-footer_width)));
+}
+
+body > footer {
+    grid-area: body-footer;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
